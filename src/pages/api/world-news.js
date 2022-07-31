@@ -1,7 +1,7 @@
 import axios from 'axios';
 const htmlparser2 = require('htmlparser2');
 import { API_URLS } from '../../constants/api-urls';
-import getSrcFromString from '../../utils/getSrcFromsString';
+import getSrcFromString from '../../utils/getSrcFromString';
 
 const fetchWorldNews = async (req, res) => {
   const response = await axios.get(API_URLS.worldNews);
