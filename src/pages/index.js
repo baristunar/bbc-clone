@@ -1,8 +1,8 @@
 
 export default function Home() {
   return (
-    <div>
-      Hello world
-    </div>
+    <h1 className="text-3xl font-bold underline text-error">
+      Hello world!
+    </h1>
   );
 }
