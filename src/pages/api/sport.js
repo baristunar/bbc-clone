@@ -3,8 +3,8 @@ const htmlparser2 = require('htmlparser2');
 import { API_URLS } from '../../constants/api-urls';
 import getSrcFromString from '../../utils/getSrcFromsString';
 
-const fetchEconomy = async (req, res) => {
-  const response = await axios.get(API_URLS.economy);
+const fetchSport = async (req, res) => {
+  const response = await axios.get(API_URLS.sport);
   const parsedData = await htmlparser2.parseFeed(response.data);
 
   const items = parsedData.items.map((item) => {
@@ -22,4 +22,4 @@ const fetchEconomy = async (req, res) => {
   });
 };
 
-export default fetchEconomy;
+export default fetchSport;
