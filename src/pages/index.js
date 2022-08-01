@@ -5,13 +5,17 @@ import NewsLayout from '../components/NewsLayout';
 import NewsCard from '../components/NewsCard';
 import Image from 'next/Image';
 import clsx from 'clsx';
+import Carousel from '../components/Carousel';
 
 const Homepage = ({ agenda, lastMinuteNews }) => {
   const [lastMinute, setLastMinute] = useState([]);
+  const [heroSlides, setHeroSlides] = useState([]);
 
   useEffect(() => {
     if (lastMinuteNews) {
       const [first, second, third] = lastMinuteNews.items;
+      const slides = lastMinuteNews.items.slice(0, 20);
+      setHeroSlides(slides);
       setLastMinute([first, second, third]);
     }
   }, [lastMinuteNews]);
@@ -41,6 +45,8 @@ const Homepage = ({ agenda, lastMinuteNews }) => {
           </div>
         ))}
       </NewsLayout>
+
+      <Carousel slides={heroSlides} className="mt-4" /> 
 
       <NewsLayout className="mt-5">
         {agenda?.items.map((item, index) => (
