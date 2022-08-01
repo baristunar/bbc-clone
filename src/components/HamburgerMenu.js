@@ -31,7 +31,7 @@ const HamburgerMenu = ({ className }) => {
         <nav className="mt-10">
           <ul className="grid grid-cols-3 sm:grid-cols-3 gap-y-10 justify-items-center">
             {NAV_MENU.map((item, index) => (
-              <li key={index} className="flex items-center">
+              <li key={index} className="flex items-center group">
                 <Link href={item.link}>
                   <a onClick={onClickHandler}>
                     {item.image ? (
@@ -42,7 +42,9 @@ const HamburgerMenu = ({ className }) => {
                         alt={item.name}
                       />
                     ) : (
-                      item.name
+                      <span className="text-primary text-sm font-bold group-first:text-brown">
+                        {item.name}
+                      </span>
                     )}
                   </a>
                 </Link>

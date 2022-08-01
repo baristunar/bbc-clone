@@ -73,7 +73,7 @@ const Header = () => {
           <nav>
             <ul className="flex gap-x-2 lg:gap-x-0 lg:justify-between">
               {NAV_MENU.map((item, index) => (
-                <li key={index} className="flex items-center">
+                <li key={index} className="flex items-center group">
                   <Link href={item.link}>
                     <a>
                       {item.image ? (
@@ -84,7 +84,9 @@ const Header = () => {
                           alt={item.name}
                         />
                       ) : (
-                        item.name
+                        <span className="text-primary text-sm font-bold group-first:text-brown">
+                          {item.name}
+                        </span>
                       )}
                     </a>
                   </Link>
