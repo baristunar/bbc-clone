@@ -6,7 +6,8 @@ import Icon from './Icon';
 import Link from 'next/link';
 import colors from '../tailwind/colors';
 import { ROUTES } from '../constants/routes';
-import {NAV_MENU} from '../constants/nav-menu';
+import { NAV_MENU } from '../constants/nav-menu';
+import HamburgerMenu from './HamburgerMenu';
 
 const Header = () => {
   return (
@@ -62,10 +63,11 @@ const Header = () => {
               </Link>
             </li>
           </ul>
+
+          <HamburgerMenu className="ml-auto lg:hidden" />
         </div>
       </div>
-
-      <div className="py-2 shadow-md">
+      <div className="hidden py-2 shadow-md lg:block">
         <nav className="px-2 lg:container lg:px-0">
           <ul className="flex gap-x-2 lg:gap-x-0 lg:justify-between">
             {NAV_MENU.map((item, index) => (
