@@ -2,22 +2,17 @@ import React from 'react';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Logo from '../assets/images/logo.svg';
-import NtvMoney from '../assets/images/ntv-money.svg';
-import Nlife from '../assets/images/n-life.svg';
-import Sport from '../assets/images/sport.svg';
-import Astrology from '../assets/images/astrology.png';
 import Icon from './Icon';
 import Link from 'next/link';
 import colors from '../tailwind/colors';
 import { ROUTES } from '../constants/routes';
-
-/* TODO: MANAGE MENUS FROM ARRAY */
+import {NAV_MENU} from '../constants/nav-menu';
 
 const Header = () => {
   return (
     <header>
       <div className="bg-primary">
-        <div className="py-2 flex items-center lg:container">
+        <div className="py-2 px-2 flex items-center lg:px-0 lg:container">
           <Image height={34} width={90} src={Logo} alt="Ntv Logo" />
 
           <ul className="flex ml-3 gap-x-2">
@@ -71,76 +66,26 @@ const Header = () => {
       </div>
 
       <div className="py-2 shadow-md">
-        <nav className="lg:container">
-          <ul className="flex justify-between">
-            <li className="text-primary font-bold">
-              <Link href={ROUTES.turkey}>
-                <a>Türkiye</a>
-              </Link>
-            </li>
-            <li>
-              <Link href={ROUTES.ntvMoney}>
-                <a>
-                  <Image width="93" height="20" alt="Para" src={NtvMoney} />
-                </a>
-              </Link>
-            </li>
-            <li className="text-primary font-bold">
-              <Link href={ROUTES.worldNews}>
-                <a>Dünya</a>
-              </Link>
-            </li>
-            <li>
-              <Link href={ROUTES.nlife}>
-                <a>
-                  <Image width="80" height="21" alt="N life" src={Nlife} />
-                </a>
-              </Link>
-            </li>
-            <li className="text-primary font-bold">
-              <Link href={ROUTES.technology}>
-                <a>Teknoloji</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-                <a>
-                  <Image
-                    width="93"
-                    height="23"
-                    alt="Astroloji"
-                    src={Astrology}
-                  />
-                </a>
-              </Link>
-            </li>
-            <li className="text-primary font-bold">
-              <Link href={ROUTES.health}>
-                <a>Sağlık</a>
-              </Link>
-            </li>
-            <li>
-              <Link href={ROUTES.sport}>
-                <a>
-                  <Image width="93" height="13" alt="Spor skor" src={Sport} />
-                </a>
-              </Link>
-            </li>
-            <li className="text-primary font-bold">
-              <Link href="/">
-                <a>Sürdürülebilirlik</a>
-              </Link>
-            </li>
-            <li className="text-primary font-bold">
-              <Link href={ROUTES.automobile}>
-                <a>Otomobil</a>
-              </Link>
-            </li>
-            <li className="text-primary font-bold">
-              <Link href={ROUTES.education}>
-                <a>Eğitim</a>
-              </Link>
-            </li>
+        <nav className="px-2 lg:container lg:px-0">
+          <ul className="flex gap-x-2 lg:gap-x-0 lg:justify-between">
+            {NAV_MENU.map((item, index) => (
+              <li key={index} className="flex items-center">
+                <Link href={item.link}>
+                  <a>
+                    {item.image ? (
+                      <Image
+                        height={item.height}
+                        width={item.width}
+                        src={item.image}
+                        alt={item.name}
+                      />
+                    ) : (
+                      item.name
+                    )}
+                  </a>
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
