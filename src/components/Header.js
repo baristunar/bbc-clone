@@ -8,12 +8,13 @@ import colors from '../tailwind/colors';
 import { ROUTES } from '../constants/routes';
 import { NAV_MENU } from '../constants/nav-menu';
 import HamburgerMenu from './HamburgerMenu';
+import Container from './Container';
 
 const Header = () => {
   return (
     <header>
       <div className="bg-primary">
-        <div className="py-2 px-2 flex items-center lg:px-0 lg:container">
+        <Container className="py-2 flex items-center">
           <Image height={34} width={90} src={Logo} alt="Ntv Logo" />
 
           <ul className="flex ml-3 gap-x-2">
@@ -65,31 +66,33 @@ const Header = () => {
           </ul>
 
           <HamburgerMenu className="ml-auto lg:hidden" />
-        </div>
+        </Container>
       </div>
       <div className="hidden py-2 shadow-md lg:block">
-        <nav className="px-2 lg:container lg:px-0">
-          <ul className="flex gap-x-2 lg:gap-x-0 lg:justify-between">
-            {NAV_MENU.map((item, index) => (
-              <li key={index} className="flex items-center">
-                <Link href={item.link}>
-                  <a>
-                    {item.image ? (
-                      <Image
-                        height={item.height}
-                        width={item.width}
-                        src={item.image}
-                        alt={item.name}
-                      />
-                    ) : (
-                      item.name
-                    )}
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <Container>
+          <nav>
+            <ul className="flex gap-x-2 lg:gap-x-0 lg:justify-between">
+              {NAV_MENU.map((item, index) => (
+                <li key={index} className="flex items-center">
+                  <Link href={item.link}>
+                    <a>
+                      {item.image ? (
+                        <Image
+                          height={item.height}
+                          width={item.width}
+                          src={item.image}
+                          alt={item.name}
+                        />
+                      ) : (
+                        item.name
+                      )}
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </Container>
       </div>
     </header>
   );

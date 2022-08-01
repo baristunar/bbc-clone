@@ -14,7 +14,8 @@ module.exports = {
     200: '#222222'
   },
   gray: {
-    DEFAULT: '#ebebeb'
+    DEFAULT: '#ebebeb',
+    100: '#909090'
   },
   error: {
     DEFAULT: '#d72b01',

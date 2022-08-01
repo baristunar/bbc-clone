@@ -33,7 +33,7 @@ const HamburgerMenu = ({ className }) => {
             {NAV_MENU.map((item, index) => (
               <li key={index} className="flex items-center">
                 <Link href={item.link}>
-                  <a>
+                  <a onClick={onClickHandler}>
                     {item.image ? (
                       <Image
                         height={item.height}

@@ -1,4 +1,5 @@
 export const ROUTES = {
+  home: '/',
   turkey: 'turkiye',
   economy: 'ekonomi',
   lastMinute: 'son-dakika',
