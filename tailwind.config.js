@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require('./src/tailwind/colors')
-const screens = require('./src/tailwind/screens')
+const colors = require('./src/tailwind/colors');
+const screens = require('./src/tailwind/screens');
 
 module.exports = {
   content: [
@@ -45,5 +45,5 @@ module.exports = {
     colors,
     screens
   },
-  plugins: []
+  plugins: [require('@tailwindcss/line-clamp')]
 };

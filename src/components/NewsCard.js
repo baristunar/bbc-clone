@@ -11,7 +11,7 @@ const NewsCard = ({item}) => {
         alt={item.title}
         className="w-full"
       />
-      <div className="bg-white shadow-md p-5 h-28">
+      <div className="bg-white shadow-md p-5 h-36">
         <h2 className="text-primary font-bold">{item.title}</h2>
       </div>
     </div>

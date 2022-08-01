@@ -15,7 +15,11 @@ const Header = () => {
     <header>
       <div className="bg-primary">
         <Container className="py-2 flex items-center">
-          <Image height={34} width={90} src={Logo} alt="Ntv Logo" />
+          <Link href={ROUTES.home}>
+            <a>
+              <Image height={34} width={90} src={Logo} alt="Ntv Logo" />
+            </a>
+          </Link>
 
           <ul className="flex ml-3 gap-x-2">
             <li className="flex items-center text-white ml-2">
@@ -26,8 +30,10 @@ const Header = () => {
                 width={11}
                 height={10}
               />
-              <Link href="/">
-                <a className="text-sm">CANLI İZLE</a>
+              <Link href="https://www.ntv.com.tr/canli-yayin/ntv">
+                <a className="text-sm" target="_blank">
+                  CANLI İZLE
+                </a>
               </Link>
             </li>
             <li
