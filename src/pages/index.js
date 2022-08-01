@@ -15,6 +15,7 @@ const Homepage = ({ agenda, lastMinuteNews }) => {
     if (lastMinuteNews) {
       const [first, second, third] = lastMinuteNews.items;
       const slides = lastMinuteNews.items.slice(0, 20);
+      
       setHeroSlides(slides);
       setLastMinute([first, second, third]);
     }
