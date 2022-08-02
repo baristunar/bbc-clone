@@ -13,7 +13,7 @@ const Carousel = ({ slides, className }) => {
     } else setSlide(slide - 1);
   };
 
-  const handlerightArrow = () => {
+  const handleRightArrow = () => {
     if (slide === slides.length - 1) {
       setSlide(0);
     } else setSlide(slide + 1);
@@ -23,12 +23,12 @@ const Carousel = ({ slides, className }) => {
     <div className={`${className}`}>
       {slides.map((item, index) => (
         <div key={index} hidden={slide !== index}>
-          <div className="relative h-96">
+          <div className="relative h-[31.25rem]">
             <Image layout="fill" src={item.image} alt={item.title} />
             <p
               className={clsx([
                 'absolute text-sm p-4 bottom-0 w-full bg-brown text-white lg:text-2xl',
-                'font-bold text-sm h-20 overflow-ellipsis'
+                'font-bold h-20 overflow-ellipsis'
               ])}
             >
               {item.title}
@@ -54,7 +54,7 @@ const Carousel = ({ slides, className }) => {
                 'absolute rounded-full w-11 bg-white bg-opacity-50 h-11 flex justify-center items-center',
                 'top-1/2 right-2 transform -translate-y-1/2 lg:hidden'
               ])}
-            >
+            onAbort>
               <Icon
                 height={30}
                 width={30}
