@@ -49,7 +49,7 @@ const Carousel = ({ slides, className }) => {
               />
             </button>
             <button
-              onClick={handlerightArrow}
+              onClick={handleRightArrow}
               className={clsx([
                 'absolute rounded-full w-11 bg-white bg-opacity-50 h-11 flex justify-center items-center',
                 'top-1/2 right-2 transform -translate-y-1/2 lg:hidden'
