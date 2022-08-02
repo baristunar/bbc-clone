@@ -5,6 +5,13 @@ import IconHamburger from './IconHamburger';
 import IconClose from './IconClose';
 import IconArrowRight from './IconArrowRight';
 import IconArrowLeft from './IconArrowLeft';
+import IconChevronDown from './IconChevronDown';
+import IconFacebook from './IconFacebook';
+import IconTwitter from './IconTwitter';
+import IconInstagram from './IconInstagram';
+import IconYoutube from './IconYoutube';
+import IconRss from './IconRss';
+import IconFlipboard from './IconFlipboard';
 
 const icons = {
   IconCaretRight,
@@ -13,7 +20,14 @@ const icons = {
   IconHamburger,
   IconClose,
   IconArrowRight,
-  IconArrowLeft
+  IconArrowLeft,
+  IconChevronDown,
+  IconFacebook,
+  IconTwitter,
+  IconInstagram,
+  IconYoutube,
+  IconRss,
+  IconFlipboard,
 };
 
 export default icons;

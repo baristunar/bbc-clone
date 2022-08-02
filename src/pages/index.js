@@ -3,7 +3,7 @@ import { fetchAgenda, fetchLastMinuteNews } from '../services';
 import Container from '../components/Container';
 import NewsLayout from '../components/NewsLayout';
 import NewsCard from '../components/NewsCard';
-import Image from 'next/Image';
+import Image from 'next/image';
 import clsx from 'clsx';
 import Carousel from '../components/Carousel';
 

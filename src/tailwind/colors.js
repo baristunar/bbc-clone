@@ -3,6 +3,7 @@ module.exports = {
   white: '#ffffff',
   primary: {
     DEFAULT: '#022032',
+    light: '#022031',
     foreground: '#ffffff'
   },
   secondary: {
@@ -17,7 +18,7 @@ module.exports = {
     DEFAULT: '#ebebeb',
     100: '#909090'
   },
-  brown:{
+  brown: {
     DEFAULT: '#9C0000'
   },
   error: {
